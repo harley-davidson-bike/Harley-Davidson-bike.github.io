@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affordable Bike Financing — Motorcycle Loans Made Simple</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111318;
+    --ink-soft: #4a4e5a;
+    --ink-muted: #8b909e;
+    --accent: #1a56db;
+    --accent-light: #e8effc;
+    --accent-dark: #1240b0;
+    --surface: #ffffff;
+    --surface-2: #f7f8fa;
+    --surface-3: #eef0f4;
+    --border: #e2e5ec;
+    --success: #0f9b6e;
+    --success-light: #e6f7f2;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–surface);
+color: var(–ink);
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+position: sticky; top: 0; z-index: 100;
+background: rgba(255,255,255,0.92);
+backdrop-filter: blur(16px);
+border-bottom: 1px solid var(–border);
+padding: 0 clamp(20px, 5vw, 60px);
+display: flex; align-items: center; justify-content: space-between;
+height: 64px;
+}
+.nav-logo {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.25rem;
+color: var(–ink);
+text-decoration: none;
+display: flex; align-items: center; gap: 10px;
+}
+.nav-logo span {
+color: var(–accent);
+}
+.logo-icon {
+width: 32px; height: 32px;
+background: var(–accent);
+border-radius: 8px;
+display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 18px; height: 18px; fill: white; }
+.nav-links { display: flex; gap: 8px; }
+.nav-links a {
+font-size: 0.875rem; font-weight: 500; color: var(–ink-soft);
+text-decoration: none; padding: 6px 14px; border-radius: 8px;
+transition: background 0.15s, color 0.15s;
+}
+.nav-links a:hover { background: var(–surface-2); color: var(–ink); }
+.btn-nav {
+background: var(–accent); color: white !important;
+padding: 7px 18px !important; border-radius: 8px !important;
+}
+.btn-nav:hover { background: var(–accent-dark) !important; }
+
+/* HERO */
+.hero {
+padding: clamp(60px, 10vw, 110px) clamp(20px, 5vw, 60px) clamp(50px, 8vw, 90px);
+max-width: 1100px; margin: 0 auto;
+display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+@media (max-width: 768px) {
+.hero { grid-template-columns: 1fr; gap: 40px; }
+.nav-links { display: none; }
+}
+.hero-eyebrow {
+display: inline-flex; align-items: center; gap: 8px;
+background: var(–accent-light); color: var(–accent);
+font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em;
+text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
+margin-bottom: 20px;
+}
+.hero-eyebrow::before {
+content: ‘’; width: 6px; height: 6px; border-radius: 50%;
+background: var(–accent);
+}
+.hero h1 {
+font-family: ‘DM Serif Display’, serif;
+font-size: clamp(2.4rem, 5vw, 3.4rem);
+line-height: 1.15; color: var(–ink);
+margin-bottom: 20px;
+}
+.hero h1 em { font-style: italic; color: var(–accent); }
+.hero p {
+font-size: 1.05rem; color: var(–ink-soft); line-height: 1.7;
+margin-bottom: 32px; max-width: 460px;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+background: var(–accent); color: white;
+padding: 13px 26px; border-radius: var(–radius-sm);
+font-size: 0.9rem; font-weight: 600; text-decoration: none;
+transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+box-shadow: 0 2px 8px rgba(26,86,219,0.3);
+}
+.btn-primary:hover { background: var(–accent-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(26,86,219,0.35); }
+.btn-secondary {
+background: transparent; color: var(–ink);
+padding: 13px 26px; border-radius: var(–radius-sm);
+font-size: 0.9rem; font-weight: 500; text-decoration: none;
+border: 1.5px solid var(–border);
+transition: background 0.15s, border-color 0.15s;
+}
+.btn-secondary:hover { background: var(–surface-2); border-color: var(–ink-muted); }
+
+/* HERO STATS */
+.hero-stats {
+display: flex; gap: 28px; margin-top: 36px; padding-top: 36px;
+border-top: 1px solid var(–border);
+}
+.stat { }
+.stat-num {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.7rem; color: var(–ink); line-height: 1;
+}
+.stat-label { font-size: 0.8rem; color: var(–ink-muted); margin-top: 4px; }
+
+/* HERO VISUAL */
+.hero-visual {
+background: var(–surface-2);
+border-radius: 20px;
+border: 1px solid var(–border);
+padding: 32px;
+box-shadow: var(–shadow-lg);
+position: relative; overflow: hidden;
+}
+.hero-visual::before {
+content: ‘’;
+position: absolute; top: -60px; right: -60px;
+width: 200px; height: 200px;
+background: radial-gradient(circle, rgba(26,86,219,0.08) 0%, transparent 70%);
+border-radius: 50%;
+}
+.mini-calc-label {
+font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+letter-spacing: 0.06em; color: var(–ink-muted); margin-bottom: 6px;
+}
+.mini-calc-val {
+font-family: ‘DM Serif Display’, serif;
+font-size: 2.4rem; color: var(–ink); line-height: 1;
+margin-bottom: 20px;
+}
+.mini-calc-val span { font-size: 1.2rem; color: var(–ink-soft); }
+.mini-bar { margin-bottom: 14px; }
+.mini-bar-label {
+display: flex; justify-content: space-between;
+font-size: 0.8rem; color: var(–ink-soft); margin-bottom: 6px;
+}
+.mini-bar-track {
+height: 6px; background: var(–surface-3); border-radius: 100px; overflow: hidden;
+}
+.mini-bar-fill {
+height: 100%; border-radius: 100px; background: var(–accent);
+}
+.mini-breakdown {
+display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px;
+}
+.mini-bd-item {
+background: white; border-radius: var(–radius-sm);
+border: 1px solid var(–border); padding: 12px;
+}
+.mini-bd-item .label { font-size: 0.75rem; color: var(–ink-muted); }
+.mini-bd-item .value { font-size: 0.95rem; font-weight: 600; color: var(–ink); margin-top: 2px; }
+
+/* SECTION LAYOUT */
+section { padding: clamp(50px, 8vw, 90px) clamp(20px, 5vw, 60px); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+text-transform: uppercase; color: var(–accent); margin-bottom: 12px;
+}
+.section-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+line-height: 1.2; color: var(–ink); margin-bottom: 16px;
+}
+.section-sub {
+font-size: 1rem; color: var(–ink-soft); max-width: 520px; line-height: 1.7;
+}
+
+/* CALCULATOR SECTION */
+#calculator { background: var(–surface-2); }
+.calc-grid {
+display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+margin-top: 48px; align-items: start;
+}
+@media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-card {
+background: white; border-radius: var(–radius);
+border: 1px solid var(–border); padding: 32px;
+box-shadow: var(–shadow);
+}
+.calc-card h3 {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.35rem; margin-bottom: 24px;
+}
+.form-group { margin-bottom: 22px; }
+.form-group label {
+display: block; font-size: 0.85rem; font-weight: 600;
+color: var(–ink); margin-bottom: 8px;
+}
+.form-group label .hint {
+font-weight: 400; color: var(–ink-muted); margin-left: 6px;
+}
+.range-wrap { position: relative; }
+.range-val {
+position: absolute; right: 0; top: -26px;
+font-size: 0.9rem; font-weight: 600; color: var(–accent);
+}
+input[type=“range”] {
+-webkit-appearance: none; width: 100%; height: 5px;
+background: var(–surface-3); border-radius: 100px; outline: none;
+cursor: pointer;
+}
+input[type=“range”]::-webkit-slider-thumb {
+-webkit-appearance: none; width: 18px; height: 18px;
+background: var(–accent); border-radius: 50%; cursor: pointer;
+border: 3px solid white; box-shadow: 0 0 0 2px var(–accent);
+transition: transform 0.1s;
+}
+input[type=“range”]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.range-labels {
+display: flex; justify-content: space-between;
+font-size: 0.75rem; color: var(–ink-muted); margin-top: 6px;
+}
+
+/* RESULTS CARD */
+.result-card {
+background: white; border-radius: var(–radius);
+border: 1px solid var(–border); padding: 32px;
+box-shadow: var(–shadow);
+}
+.result-card h3 {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.35rem; margin-bottom: 24px;
+}
+.payment-display {
+background: var(–accent); border-radius: var(–radius-sm);
+padding: 24px; text-align: center; margin-bottom: 24px;
+color: white;
+}
+.payment-display .pay-label { font-size: 0.82rem; opacity: 0.85; margin-bottom: 6px; }
+.payment-display .pay-amount {
+font-family: ‘DM Serif Display’, serif;
+font-size: 3rem; line-height: 1;
+}
+.payment-display .pay-period { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
+.result-rows { }
+.result-row {
+display: flex; justify-content: space-between; align-items: center;
+padding: 11px 0; border-bottom: 1px solid var(–border);
+font-size: 0.9rem;
+}
+.result-row:last-child { border-bottom: none; }
+.result-row .rr-label { color: var(–ink-soft); }
+.result-row .rr-val { font-weight: 600; color: var(–ink); }
+.result-note {
+font-size: 0.78rem; color: var(–ink-muted);
+margin-top: 20px; padding-top: 16px;
+border-top: 1px solid var(–border); line-height: 1.6;
+}
+
+/* APPLY SECTION */
+#apply { background: var(–surface); }
+.apply-wrap {
+max-width: 720px; margin: 48px auto 0;
+background: white; border-radius: var(–radius);
+border: 1px solid var(–border); padding: clamp(28px, 4vw, 48px);
+box-shadow: var(–shadow-lg);
+}
+.apply-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 640px) { .apply-grid { grid-template-columns: 1fr; } }
+.apply-grid .full { grid-column: 1 / -1; }
+
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+.field-group label {
+font-size: 0.83rem; font-weight: 600; color: var(–ink);
+}
+.field-group input,
+.field-group select,
+.field-group textarea {
+border: 1.5px solid var(–border); border-radius: var(–radius-sm);
+padding: 10px 14px; font-size: 0.9rem; font-family: ‘DM Sans’, sans-serif;
+color: var(–ink); background: var(–surface);
+transition: border-color 0.15s, box-shadow 0.15s;
+outline: none;
+}
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+border-color: var(–accent);
+box-shadow: 0 0 0 3px rgba(26,86,219,0.1);
+}
+.field-group textarea { resize: vertical; min-height: 90px; }
+.field-group select { cursor: pointer; }
+
+.apply-divider {
+grid-column: 1 / -1;
+font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+letter-spacing: 0.06em; color: var(–ink-muted);
+display: flex; align-items: center; gap: 12px;
+margin: 6px 0;
+}
+.apply-divider::before, .apply-divider::after {
+content: ‘’; flex: 1; height: 1px; background: var(–border);
+}
+
+.submit-btn {
+width: 100%; padding: 14px;
+background: var(–accent); color: white; border: none;
+border-radius: var(–radius-sm); font-size: 0.95rem; font-weight: 600;
+font-family: ‘DM Sans’, sans-serif; cursor: pointer;
+transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+box-shadow: 0 2px 8px rgba(26,86,219,0.3);
+margin-top: 8px;
+}
+.submit-btn:hover { background: var(–accent-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(26,86,219,0.35); }
+.submit-btn:active { transform: translateY(0); }
+
+.form-disclaimer {
+font-size: 0.76rem; color: var(–ink-muted);
+text-align: center; margin-top: 16px; line-height: 1.6;
+}
+
+/* SUCCESS STATE */
+.success-msg {
+display: none; text-align: center; padding: 48px 24px;
+}
+.success-icon {
+width: 60px; height: 60px; border-radius: 50%;
+background: var(–success-light); margin: 0 auto 20px;
+display: flex; align-items: center; justify-content: center;
+}
+.success-icon svg { width: 28px; height: 28px; stroke: var(–success); fill: none; stroke-width: 2.5; }
+.success-msg h3 {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.6rem; margin-bottom: 10px;
+}
+.success-msg p { color: var(–ink-soft); font-size: 0.95rem; }
+
+/* TRUST BAND */
+.trust-band {
+background: var(–ink); padding: 40px clamp(20px, 5vw, 60px);
+}
+.trust-inner {
+max-width: 1100px; margin: 0 auto;
+display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 32px;
+}
+.trust-item { display: flex; align-items: flex-start; gap: 14px; }
+.trust-icon {
+width: 40px; height: 40px; border-radius: 10px;
+background: rgba(255,255,255,0.08); flex-shrink: 0;
+display: flex; align-items: center; justify-content: center;
+}
+.trust-icon svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 1.8; }
+.trust-item-title { font-size: 0.9rem; font-weight: 600; color: white; margin-bottom: 4px; }
+.trust-item-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* FOOTER */
+footer {
+background: var(–ink); border-top: 1px solid rgba(255,255,255,0.07);
+padding: 24px clamp(20px, 5vw, 60px);
+text-align: center;
+}
+footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(18px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.55s ease both; }
+.fade-up-2 { animation: fadeUp 0.55s 0.1s ease both; }
+.fade-up-3 { animation: fadeUp 0.55s 0.2s ease both; }
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z"/></svg>
+    </div>
+    Affordable Bike <span>Financing</span>
+  </a>
+  <div class="nav-links">
+    <a href="#calculator">Calculator</a>
+    <a href="#apply">Apply</a>
+    <a href="#apply" class="btn-nav">Get Pre-Approved</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="fade-up">
+    <div class="hero-eyebrow">Motorcycle Financing</div>
+    <h1>Ride now,<br><em>pay your way.</em></h1>
+    <p>Flexible financing for new and pre-owned motorcycles. Get pre-approved in minutes with competitive rates and terms built for riders.</p>
+    <div class="hero-ctas">
+      <a href="#calculator" class="btn-primary">Calculate My Payment</a>
+      <a href="#apply" class="btn-secondary">Apply Now →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">2.9%</div>
+        <div class="stat-label">Rates from</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">84 mo</div>
+        <div class="stat-label">Up to</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5 min</div>
+        <div class="stat-label">To pre-qualify</div>
+      </div>
+    </div>
+  </div>
+  <div class="fade-up-2">
+    <div class="hero-visual">
+      <div class="mini-calc-label">Estimated Monthly Payment</div>
+      <div class="mini-calc-val" id="heroPayment">$156 <span>/ mo</span></div>
+      <div class="mini-bar">
+        <div class="mini-bar-label"><span>Loan amount</span><span>$7,500</span></div>
+        <div class="mini-bar-track"><div class="mini-bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="mini-bar">
+        <div class="mini-bar-label"><span>Term</span><span>60 months</span></div>
+        <div class="mini-bar-track"><div class="mini-bar-fill" style="width:71%"></div></div>
+      </div>
+      <div class="mini-bar">
+        <div class="mini-bar-label"><span>APR</span><span>5.9%</span></div>
+        <div class="mini-bar-track"><div class="mini-bar-fill" style="width:30%"></div></div>
+      </div>
+      <div class="mini-breakdown">
+        <div class="mini-bd-item">
+          <div class="label">Total Interest</div>
+          <div class="value">$1,854</div>
+        </div>
+        <div class="mini-bd-item">
+          <div class="label">Total Cost</div>
+          <div class="value">$9,354</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAND -->
+
+<div class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <div>
+        <div class="trust-item-title">No Hidden Fees</div>
+        <div class="trust-item-sub">Transparent pricing with no origination or prepayment penalties.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+      <div>
+        <div class="trust-item-title">Secure Application</div>
+        <div class="trust-item-sub">256-bit SSL encryption protects your personal information.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div>
+        <div class="trust-item-title">Fast Decisions</div>
+        <div class="trust-item-sub">Pre-approval decisions in as little as 5 minutes.</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
+      </div>
+      <div>
+        <div class="trust-item-title">All Credit Types</div>
+        <div class="trust-item-sub">Programs available for good, fair, and rebuilding credit.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+
+<section id="calculator">
+  <div class="section-inner">
+    <div class="section-tag">Payment Calculator</div>
+    <h2 class="section-title">See your monthly payment</h2>
+    <p class="section-sub">Adjust the sliders below to estimate your payment. Real rates may vary based on credit profile and loan details.</p>
+    <div class="calc-grid">
+      <div class="calc-card">
+        <h3>Loan Details</h3>
+        <div class="form-group">
+          <label>Motorcycle Price <span class="hint">— slide to adjust</span></label>
+          <div class="range-wrap">
+            <span class="range-val" id="priceVal">$10,000</span>
+            <input type="range" id="price" min="1000" max="50000" step="500" value="10000">
+          </div>
+          <div class="range-labels"><span>$1,000</span><span>$50,000</span></div>
+        </div>
+        <div class="form-group">
+          <label>Down Payment</label>
+          <div class="range-wrap">
+            <span class="range-val" id="downVal">$2,000</span>
+            <input type="range" id="down" min="0" max="20000" step="250" value="2000">
+          </div>
+          <div class="range-labels"><span>$0</span><span>$20,000</span></div>
+        </div>
+        <div class="form-group">
+          <label>Loan Term</label>
+          <div class="range-wrap">
+            <span class="range-val" id="termVal">60 months</span>
+            <input type="range" id="term" min="12" max="84" step="12" value="60">
+          </div>
+          <div class="range-labels"><span>12 mo</span><span>84 mo</span></div>
+        </div>
+        <div class="form-group">
+          <label>Interest Rate (APR)</label>
+          <div class="range-wrap">
+            <span class="range-val" id="rateVal">5.9%</span>
+            <input type="range" id="rate" min="2.9" max="24" step="0.1" value="5.9">
+          </div>
+          <div class="range-labels"><span>2.9%</span><span>24%</span></div>
+        </div>
+      </div>
+
+```
+  <div class="result-card">
+    <h3>Your Estimate</h3>
+    <div class="payment-display">
+      <div class="pay-label">Estimated Monthly Payment</div>
+      <div class="pay-amount" id="monthlyPayment">$154</div>
+      <div class="pay-period">per month</div>
+    </div>
+    <div class="result-rows">
+      <div class="result-row">
+        <span class="rr-label">Loan Amount</span>
+        <span class="rr-val" id="loanAmt">$8,000</span>
+      </div>
+      <div class="result-row">
+        <span class="rr-label">Total Interest Paid</span>
+        <span class="rr-val" id="totalInt">$1,226</span>
+      </div>
+      <div class="result-row">
+        <span class="rr-label">Total Cost of Loan</span>
+        <span class="rr-val" id="totalCost">$9,226</span>
+      </div>
+      <div class="result-row">
+        <span class="rr-label">Term</span>
+        <span class="rr-val" id="termDisplay">60 months</span>
+      </div>
+    </div>
+    <div class="result-note">
+      * This is an estimate only. Your actual rate will be determined by your credit score, loan-to-value ratio, and other factors. Apply to get your personalized rate.
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- APPLY -->
+
+<section id="apply">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-tag">Financing Application</div>
+    <h2 class="section-title">Apply for financing</h2>
+    <p class="section-sub" style="margin:0 auto">Fill out the form below and we'll get back to you with your personalized financing options — usually within one business day.</p>
+  </div>
+  <div class="apply-wrap">
+    <div id="appForm">
+      <div class="apply-grid">
+        <div class="apply-divider full">Personal Information</div>
+        <div class="field-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Henry" id="firstName">
+        </div>
+        <div class="field-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Gevers" id="lastName">
+        </div>
+        <div class="field-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" id="email">
+        </div>
+        <div class="field-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(555) 000-0000" id="phone">
+        </div>
+        <div class="field-group full">
+          <label>Home Address</label>
+          <input type="text" placeholder="68 Naples Rd, Brookline, MA 02446">
+        </div>
+
+```
+    <div class="apply-divider full">Motorcycle Details</div>
+    <div class="field-group">
+      <label>Year</label>
+      <input type="text" placeholder="1988" id="motoYear">
+    </div>
+    <div class="field-group">
+      <label>Make</label>
+      <input type="text" placeholder="Harley-Davidson" id="motoMake">
+    </div>
+    <div class="field-group">
+      <label>Model</label>
+      <input type="text" placeholder="FXSTS Softail Springer" id="motoModel">
+    </div>
+    <div class="field-group">
+      <label>Purchase Price ($)</label>
+      <input type="number" placeholder="2500" id="motoPrice">
+    </div>
+    <div class="field-group">
+      <label>Down Payment ($)</label>
+      <input type="number" placeholder="500" id="motoDown">
+    </div>
+    <div class="field-group">
+      <label>Desired Loan Term</label>
+      <select id="motoTerm">
+        <option>12 months</option>
+        <option>24 months</option>
+        <option>36 months</option>
+        <option selected>48 months</option>
+        <option>60 months</option>
+        <option>72 months</option>
+        <option>84 months</option>
+      </select>
+    </div>
+
+    <div class="apply-divider full">Financial Information</div>
+    <div class="field-group">
+      <label>Employment Status</label>
+      <select>
+        <option>Employed Full-Time</option>
+        <option>Employed Part-Time</option>
+        <option>Self-Employed</option>
+        <option>Retired</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>Annual Income ($)</label>
+      <input type="number" placeholder="45000">
+    </div>
+    <div class="field-group">
+      <label>Credit Score Range</label>
+      <select>
+        <option>Excellent (750+)</option>
+        <option>Good (700–749)</option>
+        <option>Fair (650–699)</option>
+        <option>Building (below 650)</option>
+        <option>Not Sure</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>SSN (last 4 digits)</label>
+      <input type="text" maxlength="4" placeholder="••••">
+    </div>
+    <div class="field-group full">
+      <label>Additional Notes <span style="font-weight:400;color:var(--ink-muted)">(optional)</span></label>
+      <textarea placeholder="Any other details about your financing needs..."></textarea>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="submitApp()">Submit Financing Application →</button>
+  <p class="form-disclaimer">By submitting, you agree to a soft credit inquiry. This will not affect your credit score. Your data is encrypted and never sold.</p>
+</div>
+
+<div class="success-msg" id="successMsg">
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <h3>Application Received!</h3>
+  <p>Thanks! We've received your financing application and will be in touch within 1 business day with your personalized options.</p>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 Affordable Bike Financing — This is a demonstration website. Rates and terms shown are for illustrative purposes only.</p>
+</footer>
+
+<script>
+  const fmt = (n) => '$' + Math.round(n).toLocaleString();
+  const fmtPct = (n) => parseFloat(n).toFixed(1) + '%';
+
+  function calcPayment(price, down, termMonths, aprPct) {
+    const loan = price - down;
+    if (loan <= 0) return { monthly: 0, totalInt: 0, total: loan, loan };
+    const r = (aprPct / 100) / 12;
+    const n = termMonths;
+    let monthly;
+    if (r === 0) { monthly = loan / n; }
+    else { monthly = loan * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1); }
+    const total = monthly * n;
+    const totalInt = total - loan;
+    return { monthly, totalInt, total, loan };
+  }
+
+  function updateCalc() {
+    const price = +document.getElementById('price').value;
+    const down = Math.min(+document.getElementById('down').value, price);
+    const term = +document.getElementById('term').value;
+    const rate = +document.getElementById('rate').value;
+
+    document.getElementById('priceVal').textContent = fmt(price);
+    document.getElementById('downVal').textContent = fmt(down);
+    document.getElementById('termVal').textContent = term + ' months';
+    document.getElementById('rateVal').textContent = fmtPct(rate);
+
+    const { monthly, totalInt, total, loan } = calcPayment(price, down, term, rate);
+
+    document.getElementById('monthlyPayment').textContent = fmt(monthly);
+    document.getElementById('loanAmt').textContent = fmt(loan);
+    document.getElementById('totalInt').textContent = fmt(totalInt);
+    document.getElementById('totalCost').textContent = fmt(total);
+    document.getElementById('termDisplay').textContent = term + ' months';
+  }
+
+  ['price','down','term','rate'].forEach(id => {
+    document.getElementById(id).addEventListener('input', updateCalc);
+  });
+  updateCalc();
+
+  function submitApp() {
+    const first = document.getElementById('firstName').value.trim();
+    const last = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!first || !last || !email) {
+      alert('Please fill in at least your name and email to continue.');
+      return;
+    }
+    document.getElementById('appForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    window.scrollTo({ top: document.getElementById('apply').offsetTop - 80, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
